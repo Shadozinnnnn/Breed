@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oráculo Pokémon Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 onclick="resetPage()">🥚 Oráculo Pokémon (IA)</h1>
+        <div>Busca Aproximada Ativa</div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero-section">
+            <h2>Descubra Parceiros de Cruzamento</h2>
+            <p>Comece a digitar e veja a mágica acontecer! Clique no Pokémon desejado.</p>
+            
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <input type="text" id="poke-input" placeholder="Carregando banco de dados..." autocomplete="off" disabled onkeypress="handleEnter(event)">
+                    <button id="search-btn" onclick="processSearch()" disabled>Buscar</button>
+                </div>
+                <div id="autocomplete-list" class="autocomplete-items"></div>
+            </div>
+            
+            <div class="loader" id="loader"></div>
+            <div id="error-message" class="error-msg"></div>
+        </section>
+
+        <section class="results-container" id="results-section">
+            <button class="back-btn" onclick="resetPage()">← Nova Busca</button>
+            
+            <div id="autocorrect-box" class="autocorrect-msg"></div>
+            <div class="target-pokemon" id="target-info"></div>
+            <div class="status-message" id="status-msg"></div>
+            <div class="poke-grid" id="partners-grid"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
